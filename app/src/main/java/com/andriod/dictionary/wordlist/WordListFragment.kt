@@ -38,6 +38,8 @@ class WordListFragment : MvpAppCompatFragment(), WordListContract.View {
         )
     }
 
+    private val app by lazy { requireActivity().application as DictionaryApp }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,6 +57,7 @@ class WordListFragment : MvpAppCompatFragment(), WordListContract.View {
 
             searchButton.setOnClickListener {
                 presenter.onSearch(queryEditText.text.toString())
+                app.hideKeyboard(it)
             }
         }
     }
