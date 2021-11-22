@@ -1,5 +1,7 @@
 package com.andriod.dictionary.wordlist
 
+import android.content.Context
+import com.andriod.dictionary.Screens
 import com.andriod.dictionary.entity.Word
 import com.andriod.dictionary.model.DataProvider
 import com.github.terrakok.cicerone.Router
@@ -19,7 +21,8 @@ class WordListPresenter(
         }
 
     override fun onItemCLick(word: Word) {
-//        router.navigateTo(Screens.WordDetails(word))
+//        router.navigateTo(Screens.wordDetails(word))
+        viewState.showDetails(word)
     }
 
     override fun onSearch(query: String) {

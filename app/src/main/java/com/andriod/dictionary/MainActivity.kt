@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         app.appComponent.inject(this)
 
         if (savedInstanceState == null) {
-            router.replaceScreen(Screens.WordList())
+            router.replaceScreen(Screens.wordList())
         }
     }
 

@@ -91,4 +91,9 @@ class WordListFragment : MvpAppCompatFragment(), WordListContract.View {
             Toast.LENGTH_LONG
         ).show()
     }
+
+    override fun showDetails(word: Word) {
+        Toast.makeText(requireContext(), "todo: show details for ${word.word}", Toast.LENGTH_SHORT)
+            .show()
+    }
 }

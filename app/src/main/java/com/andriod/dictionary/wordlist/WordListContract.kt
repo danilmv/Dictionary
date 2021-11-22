@@ -20,6 +20,9 @@ class WordListContract {
 
         @Skip
         fun showError(throwable: Throwable)
+
+        @Skip
+        fun showDetails(word: Word)
     }
 
     abstract class Presenter : MvpPresenter<View>() {
