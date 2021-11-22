@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.children
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andriod.dictionary.DictionaryApp
@@ -66,10 +65,15 @@ class WordListFragment : MvpAppCompatFragment(), WordListContract.View {
     }
 
     override fun setState(state: WordListContract.ViewState) {
-        binding.root.children.forEach { it.isVisible = false }
         when (state) {
-            WordListContract.ViewState.IDLE -> binding.recyclerView.isVisible = true
-            WordListContract.ViewState.LOADING -> binding.progressBar.isVisible = true
+            WordListContract.ViewState.IDLE -> {
+                binding.recyclerView.isVisible = true
+                binding.progressBar.isVisible = false
+            }
+            WordListContract.ViewState.LOADING -> {
+                binding.recyclerView.isVisible = false
+                binding.progressBar.isVisible = true
+            }
         }
     }
 

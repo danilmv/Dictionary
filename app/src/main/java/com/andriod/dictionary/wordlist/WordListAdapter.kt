@@ -41,10 +41,10 @@ class WordListAdapter(private val listener: Listener) :
         holder.onBind(words[position])
 
     override fun getItemCount() = words.size
-    fun setData(users: List<Word>?) {
-        users?.let {
+    fun setData(words: List<Word>?) {
+        words?.let {
             this.words.clear()
-            this.words.addAll(users)
+            this.words.addAll(words)
             notifyDataSetChanged()
         }
     }
